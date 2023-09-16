@@ -44,7 +44,7 @@ function merge(left, right) {
     return result.concat(left.slice(i)).concat(right.slice(j));
 }
 
-function main() {
+(() => {
     let list = [
         4, 2, 6, 5, 3, 9
     ]
@@ -58,7 +58,4 @@ function main() {
     let sortedList = mergeSort(randomList);
 
     console.log(sortedList);
-
-}
-
-main();
+})();

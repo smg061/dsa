@@ -86,7 +86,7 @@ function postorderTraverse<T>(node: TreeNode<T>, callback: (node: TreeNode<T>) =
 }
 
 function inorderTraverse<T>(node: TreeNode<T>, callback: (node: TreeNode<T>) => void) {
-    if(node.children?.length >= 1){
+    if(node?.children?.length >= 1){
         inorderTraverse(node.children[0], callback); // traverse left
     }
     callback(node); // visit TreeNode
