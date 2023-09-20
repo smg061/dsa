@@ -6,6 +6,37 @@ const maximumTreeDepth = (root: BinaryTreeNode | null): number => {
     return Math.max(1+ maximumTreeDepth(root.left), maximumTreeDepth(root.right));
 };
 
+const maximumTreeDepthIter = (root: BinaryTreeNode | null): number => {
+    const queue: [BinaryTreeNode, number][]= [];
+
+    if (!root) return 0;
+
+    queue.push([root, 1]);
+    let maxDepth = 1;
+
+    while(queue.length > 0) {
+
+        const current = queue.shift();
+        if(!current) continue;
+
+        let [node, depth] = current;
+        if (depth > maxDepth) {
+            maxDepth = depth;
+        }
+
+        if (node.left) {
+            queue.push([node.left, depth + 1]);
+        }
+
+        if (node.right) {
+            queue.push([node.right, depth + 1]);
+        }
+
+    }
+    return maxDepth;
+}
+
+
 
 (()=> {
 
