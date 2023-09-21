@@ -22,7 +22,7 @@ class TimeLimitedCache {
 
         this.cache.set(key, { value, timer })
 
-        return true
+        return Boolean(item)
     }
 
     get(key: number): number {
