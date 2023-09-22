@@ -2,7 +2,7 @@
 type Func = (...args: any[]) => Promise<any>;
 
 
-function withTimeout(func: Func, timeout: number): Func {
+function withTimeout(func: Func, timeout: number) {
     return async (...args: any[]) => {
         return new Promise((resolve, reject) => {
             const timer = setTimeout(() => {
